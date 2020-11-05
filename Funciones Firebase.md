@@ -33,6 +33,7 @@ Tipo de Datos
 ```
 
 1.- Creación de Documentos
+
 **Si el documento no existe será creado. Si el documento existe será sobreescrito.**
 
 ```kotlin
@@ -52,6 +53,7 @@ Tipo de Datos
 ```
 
 2.- Merge de Documentos
+
 **Actualizamos un campo, el docuemto "PER" es creado si no existe.**
     
 ```kotlin
@@ -65,7 +67,7 @@ Tipo de Datos
 
 3.- Agregar un Documento
 
-**Nuevo Documento con ID definido: **
+**Nuevo Documento con ID definido:**
     
 ```kotlin
   db.collection("cities")
@@ -73,7 +75,7 @@ Tipo de Datos
     .set(data) 
 ```
 
-**Nuevo Documento con ID autogenerado: **
+**Nuevo Documento con ID autogenerado:**
     
 ```kotlin
   val data = HashMap<String,Any>()
@@ -90,7 +92,7 @@ Tipo de Datos
   val limaRef = db.collection("cities").document("PER")
 ```
 
-**Actualizar el campo "isCapital" de la ciudad 'PER' **
+**Actualizar el campo "isCapital" de la ciudad 'PER'**
     
 ```kotlin
   limaRef.update("capital",true)
@@ -116,7 +118,7 @@ Tipo de Datos
   }
 ```
 
-**Asuma que el documento contiene: **
+**Asuma que el documento contiene:**
 
 ```kotlin
   db.collection("users")
@@ -136,7 +138,7 @@ Tipo de Datos
   val limaRef = db.collection("cities").document("PER")
 ```
 
-**Agregar una nueva region al arreglo "regiones" **
+**Agregar una nueva region al arreglo "regiones"**
   
 ```kotlin
   limaRef.update(
@@ -144,7 +146,7 @@ Tipo de Datos
   )
 ```
 
-**Remover una nueva region al arreglo "regiones" **
+**Remover una nueva region al arreglo "regiones"**
   
 ```kotlin
   limaRef.update(
