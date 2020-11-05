@@ -1,6 +1,6 @@
 # Firebase-Document
 
-FIREBASE DOCUMENT
+Funciones Firebase
 
 Firebase es un modelo de base de datos NoSql el cual presenta una estructura de datos conformada por Collection (Colecciones) y Document (Documentos); los cuales los grupos de documentos son llamdos Collection.
 
