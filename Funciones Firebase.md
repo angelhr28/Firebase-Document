@@ -118,7 +118,7 @@ Tipo de Datos
   }
 ```
 
-  **Asuma que el documento contiene: **
+   **Asuma que el documento contiene: **
 
 ```kotlin
   db.collection("users")
@@ -138,7 +138,7 @@ Tipo de Datos
   val limaRef = db.collection("cities").document("PER")
 ```
 
-  **Agregar una nueva region al arreglo "regiones" **
+   **Agregar una nueva region al arreglo "regiones" **
   
 ```kotlin
   limaRef.update(
@@ -146,7 +146,7 @@ Tipo de Datos
   )
 ```
 
-  **Remover una nueva region al arreglo "regiones" **
+   **Remover una nueva region al arreglo "regiones" **
   
 ```kotlin
   limaRef.update(
