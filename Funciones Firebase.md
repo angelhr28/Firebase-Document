@@ -7,12 +7,12 @@ Firebase es un modelo de base de datos NoSql el cual presenta una estructura de 
 Teniendo como resultado 
 
 
-```json
-Collection {
+```kotlin
+Collection [
     Documentos,
     Documentos,
     Documentos
-}
+]
 ```
 Tipo de Datos 
 
@@ -108,13 +108,13 @@ Tipo de Datos
   
 ```json
   {
-    name: "Angel",
-    favorites: {
-                  food : "Ceviche",
-                  color: "Blue",
-                  subject: "recess"
+    "name": "Angel",
+    "favorites": {
+                  "food"   : "Ceviche",
+                  "color"  : "Blue",
+                  "subject": "recess"
                },
-    age: 12 
+    "age": 12 
   }
 ```
 
