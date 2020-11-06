@@ -62,22 +62,40 @@ auth.signInAnonymously()
     }
 ```
 
+## Convierte una cuenta anónima en una permanente
 
+Cuando un usuario anónimo se registra en la app, tal vez sea conveniente permitirle que continúe su trabajo con su cuenta nueva. Por ejemplo, puede que desees hacer que los elementos que el usuario agregó a su carrito de compras antes de registrarse estén disponibles en el carrito de compras de su cuenta nueva. Para hacerlo, completa los siguientes pasos:
 
+1.-Cuando se registre el usuario, completa el flujo de acceso del proveedor de autenticación del usuario hasta el paso anterior a llamar a uno de los métodos FirebaseAuth.signInWith. Por ejemplo, obtén el token del ID de Google, el token de acceso a Facebook o la dirección de correo electrónico y contraseña del usuario.
+2.-Obtén una AuthCredential para el proveedor de autenticación nuevo:
 
+   **Acceso con Google**
+```kotlin
+    val credential = GoogleAuthProvider.getCredential(googleIdToken, null)
+```
+   **Acceso con Facebook**
+```kotlin
+    val credential = FacebookAuthProvider.getCredential(token.token)
+```
+   **Acceso con correo electrónico y contraseña**
+```kotlin
+    val credential = EmailAuthProvider.getCredential(email, password)
+```
 
+3.-Pasa el objeto AuthCredential al método linkWithCredential del usuario que accedió:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```kotlin
+    auth.currentUser!!.linkWithCredential(credential)
+        .addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                Log.d(TAG, "linkWithCredential:success")
+                val user = task.result?.user
+                updateUI(user)
+            } else {
+                Log.w(TAG, "linkWithCredential:failure", task.exception)
+                Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT).show()
+                updateUI(null)
+            }
+         }
+```
