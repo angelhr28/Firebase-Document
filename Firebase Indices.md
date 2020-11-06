@@ -33,6 +33,16 @@
   - Comparadores <, <=, ==, >=, arreglos array_contains
 
 ## Operadores Condicionales 
-  Dentro de la libreria de firebase la cual se conecta con el la base de datos remota NoSQL 
-  nosotros deberemos poder realizar consultas mediantes campos de los documentos, o en cualquier otro caso por los indices
-  por ende se puede realizar un metodo llamado    
+  Dentro de la libreria de firebase la cual se conecta con el la base de datos remota NoSQL nosotros deberemos poder realizar consultas mediantes campos de los documentos, o en cualquier otro caso por los indices por ende se puede realizar un metodo llamado ```where``` que al igual que en un lenguaje plsql sirve para filtras la consulta por campos.
+  
+  Ejemplo: 
+  ```kotlin
+    citiesRef.where ( "name", "==", "Lima" )
+    
+    citiesRef.where ( "population", "<", 100000 )
+    
+    citiesRef.where ( "regions", "array-constains", "Amazonas" )
+  ```
+    
+    
+  
