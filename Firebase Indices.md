@@ -36,13 +36,20 @@
   Dentro de la libreria de firebase la cual se conecta con el la base de datos remota NoSQL nosotros deberemos poder realizar consultas mediantes campos de los documentos, o en cualquier otro caso por los indices por ende se puede realizar un metodo llamado ```where``` que al igual que en un lenguaje plsql sirve para filtras la consulta por campos.
   
   Ejemplo: 
-  ```kotlin
+  
+  - Filtros de primer nivel 
+```kotlin
     citiesRef.where ( "name", "==", "Lima" )
     
     citiesRef.where ( "population", "<", 100000 )
     
     citiesRef.where ( "regions", "array-constains", "Amazonas" )
-  ```
-    
-    
+```
+  - Filtros de segundo nivel
+  
+```kotlin
+    citiesRef.where ( "name", "==", "Lima" ).orderBy("population", "asc")
+
+    citiesRef.where ( "population", "<", 100000 ).where("population", "<", 3000)
+```
   
