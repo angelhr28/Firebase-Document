@@ -2,12 +2,12 @@
 
 ## CONFIGURACION DE LA PERSISTENCIA DE DATOS
 
-``kotlin
+```kotlin
     val setting = FirebaseFirestoreSettings.Builder()
                                            .setPersistenceEnabled(true)
                                            .build()
     db.firestoreSettings = settings
-``
+```
 
 ## CONSULTAS A DATOS OFFLINE
 
@@ -16,27 +16,27 @@
     Monitoreo de datos offline agregados
     MetadataChanges.INCLUDE
 
-``kotlin
+```kotlin
     db.collection("cities")
       .whereEqualTo("name", "Bogota")
       .addSnapshotListener(MetadataChanges.INCLUDE, EventListener<QuerySnapshot>)
-``
+```
     
 ## PRUEBAS DE ACCESO OFFLINE 
 
     Firebase nos permite realizar pruebas forzando el modo offline y el modo online de la siguiente manera ademas de que nosotros podresmo usar estos metodos para la ejecucion de datos dependiendo del estado de la red. 
 
-``kotlin
+```kotlin
     db.disableNetwork()   // Forzamos o notificamos el modo offline a firebase 
       .addOnCompleteListener{
           // Ejecutamos los metodos o funciones de manera offline 
       }
-``
+```
 
 
-``kotlin
+```kotlin
     db.enableNetwork()   // Forzamos o notificamos el modo online a firebase 
       .addOnCompleteListener{
           // Ejecutamos los metodos o funciones de manera online 
       }
-``
+```
