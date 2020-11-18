@@ -4,7 +4,7 @@
 
 Metodo de lectura y escritura para la manupulacion de datos con la cual nosotros podresmo validar o cualquier modificacion en esta bd.
 
-``kotlin
+```kotlin
     val bogDocRef = db.collection("cities").document("BOG") 
 
     db.runTransaction{
@@ -18,12 +18,12 @@ Metodo de lectura y escritura para la manupulacion de datos con la cual nosotros
         Log.e(TAG, "revisa este mmda $e")
     }
 
-``
+```
 
 ## BATCH 
 
 Metodo exclusivo de escritura en el cual podremos cambiar valores en la base de datos de firebsase.
-``kotlin
+```kotlin
     //Obtenemos un nuevo batch de escritura
     val batch = db.batch()
 
@@ -34,18 +34,18 @@ Metodo exclusivo de escritura en el cual podremos cambiar valores en la base de 
     //Actualizamos el atributo population de 'BOG'
     val bogotaRef = db.collection("cities").document("BOG")
     batch.update(bogotaRef,"population", 100000000L)
-``
+```
 
 Eliminacion de datos a travez de batch
 
-``kotlin 
+```kotlin 
     //Eliminar la ciudad 'BOG'  
     val bogotaRef = db.collection("cities").document("BOG)
     batch.delete(bogotaRef)
 
     //Realizamos el commit del batch
     batch.commit().addOnCompleteListener{} //Verificamos que eliminaremos un dato de la db 
-``
+```
 
 ## CUANDO USAR TRANSACCION O BATCH 
 

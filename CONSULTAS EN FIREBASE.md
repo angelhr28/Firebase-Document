@@ -8,7 +8,7 @@ Poseemos 2 tipos de *consultar*
 
 1. Consultas Simples
 
-``kotlin
+```kotlin
     //Creamos la referencia a las ciudades de la coleccion 
     val citiesRef = db.collection("cities")
 
@@ -29,11 +29,11 @@ Poseemos 2 tipos de *consultar*
     val citiesRef = db.collection("cities")
     citiesRef.whereArrayContains("regions", "Amazonas") // valores que contengan Amazonas en Documents
 
-``
+```
 
 2. Consultas Compuestas
 
-``kotlin
+```kotlin
     //Aqui nosotros anidaremos filtros en la misma consulta los cuales vimos en ejemplos de consultas simples
     val db.collection("cities")
           .whereEqualTo("name", "Bogota")
@@ -45,47 +45,47 @@ Poseemos 2 tipos de *consultar*
           .whereGreaterThanOrEqualTo("country", "Colombia") //mayor o igual que ...
           .whereGreaterThanOrEqualTo("country", "Suecia") //mayor o igual que ...
          
-``
+```
 
 3. Ordenamiento y limites en la consulta
 
     El ordenamiento solo debera ser ejecutado en el mismo campo que se realizo el filtro
-``kotlin
+```kotlin
     // Ordenamiento por nombre 
     val db.collection("cities")
           .whereEqualTo("name", "Bogota")
           .orderBy("name")
-``    
+```    
     El limitador si podra realizarce luego de una serie de filtros 
-``kotlin
+```kotlin
     // Limitacion a 2 resultados 
     val db.collection("cities")
           .whereEqualTo("name", "Bogota")
           .limit(2)
-``    
+```    
 
 
 4. Paginacion y cursores de datos
     
-    Use los metodos ``StartAt()`` o ``startAfter`` para definir el punto de partida de la consulta.
+    Use los metodos ```StartAt()``` o ```startAfter``` para definir el punto de partida de la consulta.
 
-``kotlin 
+```kotlin 
     //Obtener todas las ciudades con poblacion >= 1000, ordenadas por population.
     db.collection("cities")
       .orderBy("population")
       .startAt(1000)
-``
+```
 
-``kotlin 
+```kotlin 
     //Obtener todas las ciudades con poblacion <= 1000, ordenadas por population.
     db.collection("cities")
       .orderBy("population")
       .endAt(1000)
-``
+```
 
     Use el snapshot del documento para definir el cursor
   
-``kotlin 
+```kotlin 
     //Obtener data de San Francisco.
     db.collection("cities")
       .document("SF")
@@ -96,7 +96,7 @@ Poseemos 2 tipos de *consultar*
                                  .orderBy("population")
                                  .startAt(sp) 
       }
-``
+```
 
 
 

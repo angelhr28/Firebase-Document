@@ -1,15 +1,15 @@
 # VERIFICAR SI LA APP ESTA ACTUALIZADA EN TIENDA  
 
 ## LIBRERIAS 
-    Primero debemos implementar la siguiente libreria para realizar la consulta a la tienda playstore y poder leer el achivo html que nos retornara.
+Primero debemos implementar la siguiente libreria para realizar la consulta a la tienda playstore y poder leer el achivo html que nos retornara.
 
-``kotlin
+```kotlin
 implementation 'org.jsoup:jsoup:1.11.3'
-``
+```
 
 ## CODIGO DE PETICION DE INFORMACION DE APLICACION EN PLAYSTORE 
 
-``kotlin
+```kotlin
 
 import android.os.AsyncTask
 import org.jsoup.Jsoup
@@ -102,11 +102,11 @@ fun isModalActualizacion(newVersion: String = ctx.getVersionName()) : Boolean { 
     }
 }
 
-``
+```
 
 ## IMPLEMENTACION 
 
-``kotlin
+```kotlin
     // DECLARAMOS NUESTRA CLASE DENTRO DE LA VISTA PRINCIPAL O LAS VISTAS QUE DESEAMOS QUE SE MUESTRE EL MODAL DE ACTUALIZACION
     lateinit var updateVersionApp : UpdateVersionApp
 
@@ -118,4 +118,4 @@ fun isModalActualizacion(newVersion: String = ctx.getVersionName()) : Boolean { 
     // EN EL ONDESTROY AL FINALIZAR LA VISTA BORRAREMOS LA INSTANCIA Y CON ESTO LIBERAMOS LA LISTA DE INSTANCIAS 
     UpdateVersionApp.destroyInstance()
 
-``kotlin
+```
