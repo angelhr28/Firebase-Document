@@ -49,14 +49,14 @@ Poseemos 2 tipos de *consultar*
 
 3. Ordenamiento y limites en la consulta
 
-    El ordenamiento solo debera ser ejecutado en el mismo campo que se realizo el filtro
+El ordenamiento solo debera ser ejecutado en el mismo campo que se realizo el filtro
 ```kotlin
     // Ordenamiento por nombre 
     val db.collection("cities")
           .whereEqualTo("name", "Bogota")
           .orderBy("name")
 ```    
-    El limitador si podra realizarce luego de una serie de filtros 
+El limitador si podra realizarce luego de una serie de filtros 
 ```kotlin
     // Limitacion a 2 resultados 
     val db.collection("cities")
@@ -67,7 +67,7 @@ Poseemos 2 tipos de *consultar*
 
 4. Paginacion y cursores de datos
     
-    Use los metodos ```StartAt()``` o ```startAfter``` para definir el punto de partida de la consulta.
+Use los metodos ```StartAt()``` o ```startAfter``` para definir el punto de partida de la consulta.
 
 ```kotlin 
     //Obtener todas las ciudades con poblacion >= 1000, ordenadas por population.
@@ -83,7 +83,7 @@ Poseemos 2 tipos de *consultar*
       .endAt(1000)
 ```
 
-    Use el snapshot del documento para definir el cursor
+Use el snapshot del documento para definir el cursor
   
 ```kotlin 
     //Obtener data de San Francisco.

@@ -11,10 +11,10 @@
 
 ## CONSULTAS A DATOS OFFLINE
 
-    Metodo empleado por firebase con el cual nosotros podremos dar persistencia de datos a nuestros usuarios, dando una mejor iteractividad sin necesidad de una conexion a red, con la cual esta este reactivada se ejecutaran todos los cambios realizados en este estado de offline. 
+Metodo empleado por firebase con el cual nosotros podremos dar persistencia de datos a nuestros usuarios, dando una mejor iteractividad sin necesidad de una conexion a red, con la cual esta este reactivada se ejecutaran todos los cambios realizados en este estado de offline. 
 
-    Monitoreo de datos offline agregados
-    MetadataChanges.INCLUDE
+Monitoreo de datos offline agregados
+MetadataChanges.INCLUDE
 
 ```kotlin
     db.collection("cities")
@@ -24,7 +24,7 @@
     
 ## PRUEBAS DE ACCESO OFFLINE 
 
-    Firebase nos permite realizar pruebas forzando el modo offline y el modo online de la siguiente manera ademas de que nosotros podresmo usar estos metodos para la ejecucion de datos dependiendo del estado de la red. 
+Firebase nos permite realizar pruebas forzando el modo offline y el modo online de la siguiente manera ademas de que nosotros podresmo usar estos metodos para la ejecucion de datos dependiendo del estado de la red. 
 
 ```kotlin
     db.disableNetwork()   // Forzamos o notificamos el modo offline a firebase 
